@@ -1,0 +1,27 @@
+﻿<Window x:Class="MatricaNyilv.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MatricaNyilv"
+        mc:Ignorable="d"
+        Title="Matrica nyilvántartó program" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <Menu x:Name="fomenu" VerticalAlignment="Top" Height="50" FontFamily="Times New Roman" FontSize="20" Background="ForestGreen" >
+                <MenuItem x:Name="Menu_Matricak" Header="Matricák" Padding="10">
+                    <MenuItem x:Name="Menu_Matricak_listazasa" Header="Matricák listázása" Padding="10" Click="Matricak_listazasa_Click"/>
+                </MenuItem>
+
+                <MenuItem x:Name="Menu_Matrica_torzsadatok" Header="Matrica törzsadatok" Padding="10">
+                    <MenuItem x:Name="Menu_Felsegjelek_menu" Header="Felségjelek" Padding="10" Click="Felsegjelek_Click"/>
+                    <MenuItem x:Name="Menu_Kategoriak" Header="Kategóriák" Padding="10" Click="Kategoriak_Click"/>
+                    <MenuItem x:Name="Menu_Tipus" Header="Típus" Padding="10" Click="Tipus_Click"/>
+                </MenuItem>
+
+                <MenuItem x:Name="mp_Adatlap" Header="Adatlap" Padding="10" Click="mp_Adatlap_Click"/>
+
+            </Menu> 
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="MatricaNyilv.UjMatrica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MatricaNyilv"
+        mc:Ignorable="d"
+        Title="Matrica hozzáadása" Height="200" Width="700" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label x:Name="mezo1" FontFamily="Arial" FontSize="10" Margin="10" Width="60" Content="Felségjel:" />
+            <ComboBox x:Name="combo1" FontFamily="Arial" FontSize="10" Margin="10" Width="100"/>
+            <Label x:Name="mezo2" FontFamily="Arial" FontSize="10" Margin="10" Width="60" Content="Kategória:" />
+            <ComboBox x:Name="combo2" FontFamily="Arial" FontSize="10" Margin="10" Width="100"/>
+            <Label x:Name="mezo3" FontFamily="Arial" FontSize="10" Margin="10" Width="80" Content="Matrica fajta:" />
+            <ComboBox x:Name="combo3" FontFamily="Arial" FontSize="10" Margin="10" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button x:Name="matrica_hozzaadasa" Content="Matrica hozzáadása" Width="150" Height="45" FontFamily="Arial" FontSize="13" Margin="20" Click="matrica_hozzaadasa_Click"/>
+            <Button x:Name="tartalom_torlese" Content="Tartalom törlése" Width="150" Height="45" FontFamily="Arial" FontSize="13" Margin="20" Click="tartalom_torlese_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
