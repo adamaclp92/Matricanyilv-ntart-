@@ -36,3 +36,5 @@ C:\Users\Adam\Desktop\Programozási környezetek\Programozási környezetek\Eny�
 C:\Users\Adam\Desktop\Programozási környezetek\Programozási környezetek\Enyémek\MatricaNyilv\MatricaNyilv\obj\Debug\MatricaNyilv.csprojAssemblyReference.cache
 C:\Users\Adam\Desktop\Programozási környezetek\Programozási környezetek\Enyémek\MatricaNyilv\MatricaNyilv\obj\Debug\MsgBox.g.cs
 C:\Users\Adam\Desktop\Programozási környezetek\Programozási környezetek\Enyémek\MatricaNyilv\MatricaNyilv\obj\Debug\MsgBox.baml
+C:\Users\Adam\Desktop\Programozási környezetek\Programozási környezetek\Enyémek\MatricaNyilv\MatricaNyilv\obj\Debug\Registration.g.cs
+C:\Users\Adam\Desktop\Programozási környezetek\Programozási környezetek\Enyémek\MatricaNyilv\MatricaNyilv\obj\Debug\Registration.baml

@@ -19,7 +19,10 @@
                     <MenuItem x:Name="Menu_Tipus" Header="Típus" Padding="10" Click="Tipus_Click"/>
                 </MenuItem>
 
-                <MenuItem x:Name="mp_Adatlap" Header="Adatlap" Padding="10" Click="mp_Adatlap_Click"/>
+                <MenuItem x:Name="Users" Header="Felhasználók" Padding="10">
+                    <MenuItem x:Name="AddUser" Header="Új felhasználó" Padding="10" Click="AddUser_Click"/>
+                    <MenuItem x:Name="ShowUsers" Header="Felhasználók" Padding="10" Click="ShowUsers_Click"/>
+                </MenuItem>
 
             </Menu> 
         </StackPanel>

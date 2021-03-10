@@ -57,7 +57,14 @@ namespace MatricaNyilv
             uj.ShowDialog();
         }
 
-        private void mp_Adatlap_Click(object sender, RoutedEventArgs e)
+
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+            Registration r = new Registration();
+            r.ShowDialog();
+        }
+
+        private void ShowUsers_Click(object sender, RoutedEventArgs e)
         {
 
         }

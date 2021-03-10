@@ -27,9 +27,11 @@ namespace MatricaNyilv
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["kapcsolodas"].ConnectionString);
         public Login()
         {
+          
             InitializeComponent();
+            
+           
         }
-
         private bool VerifyUser()
         {
 
@@ -44,7 +46,7 @@ namespace MatricaNyilv
             
             if (reader.Read())
             {
-                if (Convert.ToBoolean(reader["stat"]))
+                if ((int)(reader["stat"]) == 1)
                 {
                     return true;
                 }
@@ -119,6 +121,8 @@ namespace MatricaNyilv
             {
                 userNameBox.SelectAll();
             }));
+
+
         }
     }
 }

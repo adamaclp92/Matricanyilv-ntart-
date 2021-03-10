@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -27,6 +29,9 @@ namespace MatricaNyilv
         public Matricak()
         {
             InitializeComponent();
+            datepicker2.SelectedDate = DateTime.Now;
+            this.Language = XmlLanguage.GetLanguage("hu-HU");
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -58,12 +63,18 @@ namespace MatricaNyilv
             parancs.Parameters.AddWithValue("@felsegjel", szoveg1.Text);
             parancs.Parameters.AddWithValue("@kategoria", szoveg2.Text);
             parancs.Parameters.AddWithValue("@matricafajta", szoveg3.Text);
+            parancs.Parameters.AddWithValue("@rendszam", szoveg7.Text);
+            if (!check1.IsChecked.Value)
+                datepicker1.SelectedDate = DateTime.Parse("2001.01.01");        
+            parancs.Parameters.AddWithValue("@ervenyesseg_kezdete", datepicker1.SelectedDate);
+            
             kapcs.Open();
             SqlDataReader reader = parancs.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
             MatricaTabla.ItemsSource = dt.DefaultView;
             kapcs.Close();
+
         }
 
         private void szoveg2_TextChanged(object sender, TextChangedEventArgs e)
@@ -85,7 +96,7 @@ namespace MatricaNyilv
         {
             try
             {
-                if (combo1.SelectedItem == null || combo2.SelectedItem == null || combo3.SelectedItem == null)
+                if (szoveg9.Text == null || combo1.SelectedItem == null || combo2.SelectedItem == null || combo3.SelectedItem == null)
                 {
                     MessageBox.Show("Mindenképpen ki kell tölteni!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -101,11 +112,16 @@ namespace MatricaNyilv
                         parancs.Parameters.AddWithValue("@orsz", combo1.SelectedValue);
                         parancs.Parameters.AddWithValue("@kategoria", combo2.SelectedValue);
                         parancs.Parameters.AddWithValue("@matricafajta", combo3.SelectedValue);
+                        parancs.Parameters.AddWithValue("@rendszam", szoveg9.Text);
+                        parancs.Parameters.AddWithValue("@ervenyesseg_kezdete", datepicker2.SelectedDate);
+
                         kapcs.Open();
                         parancs.ExecuteNonQuery();
                         combo1.SelectedItem = null;
                         combo2.SelectedItem = null;
                         combo3.SelectedItem = null;
+                        szoveg9.Text = null;
+                        datepicker2.SelectedDate = DateTime.Now;
                         kapcs.Close();
                         MessageBox.Show("Sikerült az adatfelvitel!");
                         
@@ -131,11 +147,42 @@ namespace MatricaNyilv
             szoveg1.Text = "";
             szoveg2.Text = "";
             szoveg3.Text = "";
+            szoveg9.Text = null;
+            szoveg7.Text = null;
+            check1.IsChecked = false;
+            datepicker1.SelectedDate = DateTime.Parse("2001.01.01");
+            datepicker2.SelectedDate = DateTime.Now;
         }
 
         private void vissza_gomb_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void szoveg4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+          
+        }
+
+        private void szoveg7_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Betolt();
+        }
+
+        private void datepicker1_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            Betolt();
+        }
+
+        private void datepicker1_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Betolt();
+        }
+
+        private void check1_Checked(object sender, RoutedEventArgs e)
+        {
+            Betolt();
+            datepicker1.SelectedDate = DateTime.Parse("2021.01.01");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Window
+﻿<Window FocusManager.FocusedElement="{Binding ElementName=usernametextbox}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -167,9 +167,9 @@
             <StackPanel Width="350">
                 <StackPanel Margin="20 40">
                     <TextBlock Text="Bejelentkezés" Margin="20" Foreground="White" TextAlignment="Center" FontSize="30" FontFamily="Sitka Text"/>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="stack1" Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"/>
-                        <TextBox x:Name="usernametextbox" Margin="10 0" materialDesign:HintAssist.Hint="Írd be a felhasználóneved!" Foreground="White" FontSize="15" CaretBrush="White"  SelectionBrush="White" Width="250" BorderBrush="White"  GotKeyboardFocus="usernametextbox_GotKeyboardFocus"/>
+                        <TextBox x:Name="usernametextbox" Margin="10 0" materialDesign:HintAssist.Hint="Írd be a felhasználóneved!" Foreground="White" FontSize="15" CaretBrush="White"  SelectionBrush="White" Width="250" BorderBrush="White"  GotKeyboardFocus="usernametextbox_GotKeyboardFocus" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 20" >
                         <materialDesign:PackIcon Kind="Lock"  Width="25" Height="25" Foreground="White"/>
