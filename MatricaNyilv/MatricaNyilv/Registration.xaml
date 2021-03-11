@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MatricaNyilv"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-         Title="Regisztráció" Height="350" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="CanMinimize"  WindowStyle="None">
+         Title="Regisztráció" Height="350" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="CanMinimize"  WindowStyle="None" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="extiButton" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
@@ -163,17 +163,21 @@
         <StackPanel Orientation="Horizontal">
 
             <StackPanel>
-                <StackPanel Margin="20 20">
+                <StackPanel Margin="20 0">
                     <TextBlock Text="Új felhasználó" Margin="20" Foreground="White" TextAlignment="Center" FontSize="30" FontFamily="Sitka Text"/>
                     <StackPanel x:Name="stack1" Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"/>
-                        <TextBox x:Name="usernametextbox" Margin="10 0" materialDesign:HintAssist.Hint="Fehasználónév" Foreground="White" FontSize="15" CaretBrush="White"  SelectionBrush="White" Width="200" BorderBrush="White"  GotKeyboardFocus="usernametextbox_GotKeyboardFocus" />
+                        <TextBox x:Name="usernametextbox" Margin="10 0" materialDesign:HintAssist.Hint="Felhasználónév" Foreground="White" FontSize="15" CaretBrush="White"  SelectionBrush="White" Width="200" BorderBrush="White"  GotKeyboardFocus="usernametextbox_GotKeyboardFocus" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 20" >
+                    <StackPanel  Orientation="Horizontal" Margin="0 20">
+                        <materialDesign:PackIcon Kind="Connection" Width="25" Height="25" Foreground="White"/>
+                        <ComboBox x:Name="userlevelcombo" Margin="10 0" materialDesign:HintAssist.Hint="Kiválasztás"  FontSize="15" Width="200" BorderBrush="White" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
                         <materialDesign:PackIcon Kind="Lock"  Width="25" Height="25" Foreground="White"/>
                         <PasswordBox x:Name="passwordtextbox" Margin="10 0" materialDesign:HintAssist.Hint="Jelszó" Foreground="White" FontSize="15" CaretBrush="White" SelectionBrush="White" Width="200" BorderBrush="White" GotKeyboardFocus="passwordtextbox_GotKeyboardFocus"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" >
+                    <StackPanel Orientation="Horizontal" Margin="0 20">
                         <materialDesign:PackIcon Kind="Lock"  Width="25" Height="25" Foreground="White"/>
                         <PasswordBox x:Name="passwordconfirmtextbox" Margin="10 0" materialDesign:HintAssist.Hint="Jelszó megerősítés" Foreground="White" FontSize="15" CaretBrush="White" SelectionBrush="White" Width="200" BorderBrush="White" GotKeyboardFocus="passwordconfirmtextbox_GotKeyboardFocus"/>
                     </StackPanel>
